@@ -3,7 +3,8 @@ require 'faraday'
 
 HOOK_1 = ENV['DC_HOOK_1']
 HOOK_2 = ENV['DC_HOOK_2']
-
+HOOK_3 = ENV['DC_HOOK_3']
+HOOK_4 = ENV['DC_HOOK_4']
 
 scheduler = Rufus::Scheduler.new
 
