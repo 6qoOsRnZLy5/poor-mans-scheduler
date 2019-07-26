@@ -19,4 +19,16 @@ scheduler.interval '1m' do
   puts "rufus task should be done! It's #{Time.now}"
 end
 
+scheduler.interval '5m' do
+  puts "next rufus run! It's #{Time.now}"
+  
+  response = Faraday.get HOOK_3
+  puts response.headers unless response.status == 200
+  sleep 1
+  response = Faraday.get HOOK_4
+  puts response.headers unless response.status == 200
+  
+  puts "rufus task should be done! It's #{Time.now}"
+end
+
 scheduler.join
