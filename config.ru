@@ -10,7 +10,7 @@ scheduler = Rufus::Scheduler.new
 
 scheduler.interval '1m' do
   puts "next rufus run! It's #{Time.now}"
-  
+  puts "------ UPDATING NEWS -------"
   response = Faraday.get HOOK_1
   puts response.headers unless response.status == 200
   sleep 1
@@ -22,7 +22,7 @@ end
 
 scheduler.interval '5m' do
   puts "next rufus run! It's #{Time.now}"
-  
+  puts "------ UPDATING SKINS -------"
   response = Faraday.get HOOK_3
   puts response.headers unless response.status == 200
   sleep 1
